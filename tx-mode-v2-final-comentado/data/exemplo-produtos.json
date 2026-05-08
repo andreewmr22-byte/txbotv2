@@ -1,0 +1,10 @@
+{
+  "produtos": [
+    {
+      "icone": "👕",
+      "nome": "Camisa TX Premium",
+      "descricao": "R$129,90 • estoque 48",
+      "status": "OK"
+    }
+  ]
+}

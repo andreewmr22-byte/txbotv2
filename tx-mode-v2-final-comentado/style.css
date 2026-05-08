@@ -1,0 +1,101 @@
+/* =========================================================
+   TX MODE V2 — STYLE.CSS
+   Aqui você altera o visual geral do MiniApp.
+   Principais pontos editáveis:
+   1. Cores no :root
+   2. Largura mobile em .phone-shell
+   3. Botões/cards/menus nas classes .card, .item, .bottom-nav
+   ========================================================= */
+
+* { box-sizing: border-box; }
+
+:root {
+  /* ALTERAR CORES DA IDENTIDADE TX AQUI */
+  --bg: #020604;
+  --bg2: #06140d;
+  --card: #0d1d14;
+  --card2: #10271a;
+  --stroke: rgba(226, 191, 92, .22);
+  --stroke2: rgba(255, 255, 255, .08);
+  --gold: #e2bf5c;
+  --gold2: #b88a2a;
+  --green: #22d477;
+  --text: #f7f3e8;
+  --muted: #8d9b91;
+  --danger: #ef6a5d;
+  --blue: #4aa3ff;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  background: #000;
+  color: var(--text);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background:
+    radial-gradient(circle at top right, rgba(226,191,92,.12), transparent 34%),
+    radial-gradient(circle at top left, rgba(25,125,74,.18), transparent 36%),
+    linear-gradient(180deg, #020604, #06140d 55%, #020604);
+}
+
+.phone-shell {
+  /* ALTERAR: largura máxima do app no desktop. No celular usa 100%. */
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: calc(16px + env(safe-area-inset-top)) 16px calc(102px + env(safe-area-inset-bottom));
+}
+
+.app-header {
+  display: flex; align-items: center; gap: 12px; padding: 8px 0 18px; position: sticky; top: 0; z-index: 10;
+  background: linear-gradient(180deg, rgba(2,6,4,.96), rgba(2,6,4,.72), transparent);
+  backdrop-filter: blur(14px);
+}
+
+.tx-logo {
+  /* ALTERAR: tamanho e estilo da logo textual TX */
+  width: 54px; height: 54px; border-radius: 17px; display: grid; place-items: center;
+  color: var(--gold); font-size: 22px; font-weight: 900; border: 1px solid var(--stroke);
+  background: linear-gradient(145deg, rgba(226,191,92,.18), rgba(8,21,14,.9));
+}
+
+.app-header h1 { margin: 0; font-size: 28px; line-height: 1; letter-spacing: -1px; }
+.app-header p { margin: 5px 0 0; color: var(--muted); font-size: 12px; }
+.icon-btn { margin-left: auto; width: 48px; height: 48px; border-radius: 17px; border: 1px solid var(--stroke); background: rgba(13,29,20,.82); color: var(--gold); font-size: 20px; }
+.page { animation: enter .2s ease; }
+@keyframes enter { from { opacity: .25; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.search { display: flex; align-items: center; gap: 10px; margin: 4px 0 18px; padding: 15px 16px; border-radius: 24px; border: 1px solid var(--stroke2); background: rgba(9,20,14,.88); }
+.search input { width: 100%; border: 0; outline: 0; background: transparent; color: var(--text); font-size: 15px; }
+.search input::placeholder { color: #627067; }
+.hero { padding: 22px; border-radius: 28px; border: 1px solid var(--stroke); background: linear-gradient(145deg, rgba(19,79,43,.42), rgba(7,17,12,.96)); box-shadow: 0 18px 42px rgba(0,0,0,.35); }
+.badge { display: inline-flex; align-items: center; padding: 7px 12px; border-radius: 999px; border: 1px solid rgba(226,191,92,.35); color: #ffe39b; background: rgba(226,191,92,.08); font-size: 12px; font-weight: 800; }
+.hero h2 { margin: 18px 0 10px; font-size: 26px; line-height: 1.05; letter-spacing: -1px; }
+.hero p { margin: 0; color: var(--muted); line-height: 1.45; font-size: 15px; }
+.quick-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 11px; margin: 16px 0 24px; }
+.quick { min-height: 112px; text-align: left; border: 1px solid var(--stroke2); border-radius: 23px; padding: 14px; color: var(--text); background: rgba(16,34,25,.78); display: flex; flex-direction: column; justify-content: space-between; }
+.quick i { width: 42px; height: 42px; border-radius: 15px; display: grid; place-items: center; background: rgba(226,191,92,.1); color: var(--gold); font-style: normal; font-size: 20px; }
+.quick b { display: block; font-size: 14px; } .quick small { color: var(--muted); font-size: 11px; }
+.section { margin: 22px 0 11px; display: flex; align-items: end; justify-content: space-between; }
+.section h3 { margin: 0; font-size: 18px; } .section span { color: var(--muted); font-size: 12px; }
+.card, .item { border: 1px solid var(--stroke2); border-radius: 22px; background: linear-gradient(180deg, rgba(16,34,25,.95), rgba(7,16,11,.96)); box-shadow: 0 16px 36px rgba(0,0,0,.24); }
+.kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; } .card { padding: 16px; }
+.card small { color: var(--muted); font-size: 11px; } .card strong { display: block; margin: 7px 0; font-size: 21px; } .up { color: var(--green); font-weight: 800; font-size: 12px; }
+.stack { display: grid; gap: 10px; } .item { display: flex; align-items: center; gap: 12px; padding: 13px; }
+.thumb { width: 46px; height: 46px; flex: none; border-radius: 16px; display: grid; place-items: center; background: rgba(226,191,92,.1); color: var(--gold); font-size: 22px; }
+.item h4 { margin: 0 0 3px; font-size: 14px; } .item p { margin: 0; color: var(--muted); font-size: 12px; }
+.pill { margin-left: auto; border-radius: 999px; padding: 5px 8px; font-size: 10px; font-weight: 900; color: var(--green); background: rgba(34,212,119,.12); white-space: nowrap; }
+.pill.gold { color: var(--gold); background: rgba(226,191,92,.12); } .pill.red { color: var(--danger); background: rgba(239,106,93,.12); }
+.menu { display: grid; gap: 10px; } .menu button { width: 100%; text-align: left; border: 1px solid var(--stroke2); border-radius: 22px; padding: 15px; color: var(--text); background: rgba(16,34,25,.78); display: flex; gap: 12px; align-items: center; }
+.menu i { width: 42px; height: 42px; border-radius: 15px; display: grid; place-items: center; color: var(--gold); background: rgba(226,191,92,.09); font-style: normal; }
+.menu b { display: block; font-size: 15px; } .menu small { color: var(--muted); }
+.progress { height: 8px; border-radius: 99px; background: rgba(255,255,255,.08); overflow: hidden; margin-top: 10px; } .progress span { display: block; height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--gold2), var(--gold)); }
+.bottom-nav { position: fixed; left: 50%; bottom: calc(10px + env(safe-area-inset-bottom)); transform: translateX(-50%); width: min(398px, calc(100% - 24px)); height: 76px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; padding: 8px; border: 1px solid var(--stroke2); border-radius: 28px; background: rgba(7,19,12,.92); backdrop-filter: blur(18px); box-shadow: 0 20px 50px rgba(0,0,0,.45); z-index: 20; }
+.nav { border: 0; border-radius: 21px; background: transparent; color: var(--muted); font-size: 21px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; }
+.nav span { font-size: 10px; font-weight: 800; } .nav.active { background: linear-gradient(135deg, var(--gold), #c79634); color: #181105; }
+.toast { position: fixed; left: 50%; bottom: 100px; transform: translateX(-50%) translateY(12px); opacity: 0; transition: .2s; border: 1px solid var(--stroke); border-radius: 16px; padding: 11px 14px; max-width: 320px; text-align: center; background: #101f16; color: var(--text); z-index: 40; }
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+@media (min-width: 760px) { body { display: grid; place-items: center; } .phone-shell { min-height: 860px; border-left: 1px solid rgba(255,255,255,.06); border-right: 1px solid rgba(255,255,255,.06); } }

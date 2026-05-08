@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <!-- ALTERAR: nome que aparece na aba do navegador -->
+  <title>Equipe TX — MiniApp V2</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Telegram Mini App: manter quando for usar dentro do Telegram -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <main class="phone-shell">
+    <!-- CABEÇALHO: renomear marca, subtítulo e botão de perfil no app.js -->
+    <header class="app-header">
+      <div class="tx-logo">TX</div>
+      <div>
+        <h1 id="brandName">Equipe TX</h1>
+        <p id="profileLabel">Perfil: Gestor</p>
+      </div>
+      <!-- ALTERAR: este botão alterna Cliente / Equipe / Gestor -->
+      <button class="icon-btn" id="profileBtn">🛡</button>
+    </header>
+
+    <!-- O app.js renderiza todas as telas aqui -->
+    <section id="app"></section>
+
+    <!-- MENU INFERIOR: alterar nomes/ícones em app.js e CSS se necessário -->
+    <nav class="bottom-nav">
+      <button class="nav active" data-page="home">⌂<span>Início</span></button>
+      <button class="nav" data-page="produtos">⌕<span>Buscar</span></button>
+      <button class="nav" data-page="avisos">♢<span>Avisos</span></button>
+      <button class="nav" data-page="equipe">♙<span>Equipe</span></button>
+      <button class="nav" data-page="mais">☷<span>Mais</span></button>
+    </nav>
+  </main>
+
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
